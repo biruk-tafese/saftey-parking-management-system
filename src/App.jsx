@@ -1,17 +1,22 @@
+import React from 'react'
+import MainComponent from './MainComponent'
+import { AuthProvider } from './contexts/AuthContext.jsx';
+import { ThemeProvider } from './contexts/ThemeContext.jsx';
+import { LanguageProvider } from './contexts/LanguageContext.jsx';
+
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <div className="flex items-center gap-2">
-          <p className="text-2xl font-bold text-gray-800">
-           Parking Management System - Saftey First
-          </p>
-          </div>
-          </div>
-        
+      <AuthProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <MainComponent />
+          </LanguageProvider>
+        </ThemeProvider>
+      </AuthProvider>     
     </>
   )
 }
